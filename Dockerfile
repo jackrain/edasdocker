@@ -13,11 +13,11 @@ RUN rm -rf /acs/user/tomcat
 
 RUN mkdir -p /acs/user/tomcat
 
-RUN tar zxvf tomcat.tgz -C /acs/user/tomcat  --strip-components 1
+RUN tar zxf tomcat.tgz -C /acs/user/tomcat  --strip-components 1
 
 RUN wget -q http://edas-public.oss-cn-hangzhou.aliyuncs.com/install_package/pandora/unauth/taobao-hsf.tgz
 
-RUN tar zxvf taobao-hsf.tgz -C /acs/user/tomcat/deploy/
+RUN tar zxf taobao-hsf.tgz -C /acs/user/tomcat/deploy/
 
 ENV JAVA_OPTS -Dpandora.location=/acs/user/tomcat/deploy/taobao-hsf.sar
 
