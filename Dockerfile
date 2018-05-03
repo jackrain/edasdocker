@@ -21,6 +21,10 @@ RUN tar zxf taobao-hsf.tgz -C /acs/user/tomcat/deploy/
 
 ENV JAVA_OPTS -Dpandora.location=/acs/user/tomcat/deploy/taobao-hsf.sar
 
+RUN sed -i 's/appBase="deploy"/appBase="webapps"/g' /acs/user/tomcat/conf/server.xml
+
+RUN sed -i 's/autoDeploy="false"/autoDeploy="true"/g' /acs/user/tomcat/conf/server.xml
+
 WORKDIR /acs
 
 RUN echo "raincloudedas setup"
